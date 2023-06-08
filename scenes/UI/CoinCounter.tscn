@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/font_outline.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/coin/tile_0151.png" type="Texture" id=2]
+[ext_resource path="res://assets/coin/tile_0152.png" type="Texture" id=3]
+[ext_resource path="res://scenes/UI/CoinCounter.gd" type="Script" id=4]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 2
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+
+[node name="CoinCounter" type="HBoxContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 41.0
+margin_bottom = 16.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 12, 12 )
+size_flags_vertical = 8
+texture = SubResource( 1 )
+expand = true
+
+[node name="CoinLabel" type="Label" parent="."]
+margin_left = 12.0
+margin_top = 1.0
+margin_right = 37.0
+margin_bottom = 10.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "10/32"
